@@ -21,13 +21,20 @@ public:
 	MasterQuartzFactory();
 
 	static void loadMasterQuartz();
-	static MasterQuartz* getNewMasterQuartz(std::string ID) {return masterQuartzMap.find(ID)->second();}
-	static std::map<std::string, std::function<MasterQuartz*()>> getMasterQuartzMap() {return masterQuartzMap;}
-	static void regMasterQuartz(std::string ID, std::function<MasterQuartz*()> f) {masterQuartzMap[ID] = f;}
+	static MasterQuartz* getNewMasterQuartz(std::string ID) {
+		return masterQuartzMap.find(ID)->second();
+	}
+	static std::map<std::string, std::function<MasterQuartz*()>> getMasterQuartzMap() {
+		return masterQuartzMap;
+	}
+	static void regMasterQuartz(std::string ID,
+			std::function<MasterQuartz*()> f) {
+		masterQuartzMap[ID] = f;
+	}
 
-	static bool isLoaded() {return loaded;}
+	static bool isLoaded() {
+		return loaded;
+	}
 };
-
-
 
 #endif /* MASTERQUARTZFACTORY_H_ */

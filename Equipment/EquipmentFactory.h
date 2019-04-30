@@ -23,14 +23,19 @@ public:
 	EquipmentFactory();
 
 	static void loadEquipments();
-	static Equipment* getNewEquipment(std::string ID) {return equipmentMap.find(ID)->second();}
-	static std::map<std::string, std::function<Equipment*()>> getEquipmentMap() {return equipmentMap;}
-	static void regEquipment(std::string ID, std::function<Equipment*()> f) {equipmentMap[ID] = f;}
+	static Equipment* getNewEquipment(std::string ID) {
+		return equipmentMap.find(ID)->second();
+	}
+	static std::map<std::string, std::function<Equipment*()>> getEquipmentMap() {
+		return equipmentMap;
+	}
+	static void regEquipment(std::string ID, std::function<Equipment*()> f) {
+		equipmentMap[ID] = f;
+	}
 
-	static bool isLoaded() {return loaded;}
+	static bool isLoaded() {
+		return loaded;
+	}
 };
-
-
-
 
 #endif /* EQUIPMENTFACTORY_H_ */

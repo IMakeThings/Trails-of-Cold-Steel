@@ -21,14 +21,20 @@ public:
 	CharacterFactory();
 
 	static void loadCharacters();
-	static Character* getNewCharacter(std::string ID, std::string n, Position p) {return characterMap.find(ID)->second();}
-	static std::map<std::string, std::function<Character*()>> getCharacterMap() {return characterMap;}
-	static void regCharacter(std::string ID, std::function<Character*()> f) {characterMap[ID] = f;}
+	static Character* getNewCharacter(std::string ID, std::string n,
+			Position p) {
+		return characterMap.find(ID)->second();
+	}
+	static std::map<std::string, std::function<Character*()>> getCharacterMap() {
+		return characterMap;
+	}
+	static void regCharacter(std::string ID, std::function<Character*()> f) {
+		characterMap[ID] = f;
+	}
 
-	static bool isLoaded() {return loaded;}
+	static bool isLoaded() {
+		return loaded;
+	}
 };
-
-
-
 
 #endif /* CHARACTERFACTORY_H_ */

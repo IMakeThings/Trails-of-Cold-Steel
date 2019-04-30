@@ -11,7 +11,7 @@
 #ifndef TACHI_H_
 #define TACHI_H_
 
-class Tachi:public Character {
+class Tachi: public Character {
 	static const Stats baseStats;
 	static const AttackRanks ranks;
 	static const std::string representation;
@@ -19,6 +19,7 @@ class Tachi:public Character {
 
 public:
 	Tachi(std::string n, Position position);
+	Tachi(std::string n, Position position, PlayerAI* p);
 	int getAttackModifier();
 	int getArtModifier();
 };

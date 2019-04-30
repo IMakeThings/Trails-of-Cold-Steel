@@ -16,20 +16,29 @@
 using Stats = std::array<int, 11>;
 
 class Quartz {
-    Stats stats;
-    std::string name;
+	Stats stats;
+	std::string name;
 
 protected:
-    std::vector<Art*> arts;
+	std::vector<Art*> arts;
 
 public:
-	virtual ~Quartz() {}
-	Quartz(Stats const& s, std::string const &n):stats(s), name(n) {};
+	virtual ~Quartz() {
+	}
+	Quartz(Stats const& s, std::string const &n) :
+			stats(s), name(n) {
+	}
+	;
 
-	std::string getQuartzName() {return name;}
-	Stats getStatsModifier() {return stats;}
-	std::vector<Art*> getArts() {return arts;}
+	std::string getQuartzName() {
+		return name;
+	}
+	Stats getStatsModifier() {
+		return stats;
+	}
+	std::vector<Art*> getArts() {
+		return arts;
+	}
 };
-
 
 #endif /* QUARTZ_H_ */

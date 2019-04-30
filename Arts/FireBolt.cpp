@@ -12,8 +12,6 @@ const int FireBolt::EPCost = 2;
 const int FireBolt::castTime = 300;
 const int FireBolt::AoESize = 0;
 
-
-
 int FireBolt::getBaseDamage() {
 	return Dice::rollDx(1, 4, 0);
 }

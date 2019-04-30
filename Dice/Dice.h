@@ -7,7 +7,4 @@ public:
 	static int rollDx(int multiplier, int die, int modifier);
 };
 
-
-
-
 #endif

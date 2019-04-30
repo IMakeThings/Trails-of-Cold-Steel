@@ -10,16 +10,19 @@
 
 #include "Arts.h"
 
-class FireBolt:public Art {
+class FireBolt: public Art {
 	static const std::string name;
 	static const int EPCost;
 	static const int castTime;
 	static const int AoESize;
 
 public:
-	FireBolt():Art(name, EPCost, castTime, AoESize) {}
+	FireBolt() :
+			Art(name, EPCost, castTime, AoESize) {
+	}
 
-	~FireBolt() {}
+	~FireBolt() {
+	}
 
 	int getBaseDamage();
 };

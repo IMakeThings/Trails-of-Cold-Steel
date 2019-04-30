@@ -10,25 +10,29 @@
 
 #include "Crafts.h"
 
-class BasicAttack:public Craft {
+class BasicAttack: public Craft {
 	static const std::string name;
 	static const int craftPoints;
 	static const int AoESize;
 	static const Targetting targetting;
 
 public:
-	BasicAttack():Craft(name, craftPoints, AoESize, targetting) {}
+	BasicAttack() :
+			Craft(name, craftPoints, AoESize, targetting) {
+	}
 
 	void displayHitDescription(Entity* hitter, Entity* hittee, int dmg);
-	void displaySpecificCraftDescription() {std::cout << "The big spank";}
+	void displaySpecificCraftDescription() {
+		std::cout << "The big spank";
+	}
 
-	void craftAimedFunctions(Entity* user, Position aimed) {}
+	void craftAimedFunctions(Entity* user, Position aimed) {
+	}
 
-	~BasicAttack() {}
+	~BasicAttack() {
+	}
 
 	int getBaseDamage();
 };
-
-
 
 #endif /* BASICATTACK_H_ */

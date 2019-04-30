@@ -14,4 +14,3 @@ void enterPause() {
 	std::cout << "\n\n";
 }
 
-

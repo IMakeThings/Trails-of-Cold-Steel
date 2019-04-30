@@ -10,7 +10,6 @@
 std::map<std::string, std::function<Art*()>> ArtFactory::artMap;
 bool ArtFactory::loaded = false;
 
-
 ArtFactory::ArtFactory() {
 	return;
 }
@@ -19,5 +18,4 @@ void ArtFactory::loadArts() {
 	loaded = true;
 	artMap["FireBolt"] = []() -> Art* {return new FireBolt();};
 }
-
 

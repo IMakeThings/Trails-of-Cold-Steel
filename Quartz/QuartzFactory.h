@@ -21,13 +21,19 @@ public:
 	QuartzFactory();
 
 	static void loadQuartz();
-	static Quartz* getNewQuartz(std::string ID) {return quartzMap.find(ID)->second();}
-	static std::map<std::string, std::function<Quartz*()>> getQuartzMap() {return quartzMap;}
-	static void regQuartz(std::string ID, std::function<Quartz*()> f) {quartzMap[ID] = f;}
+	static Quartz* getNewQuartz(std::string ID) {
+		return quartzMap.find(ID)->second();
+	}
+	static std::map<std::string, std::function<Quartz*()>> getQuartzMap() {
+		return quartzMap;
+	}
+	static void regQuartz(std::string ID, std::function<Quartz*()> f) {
+		quartzMap[ID] = f;
+	}
 
-	static bool isLoaded() {return loaded;}
+	static bool isLoaded() {
+		return loaded;
+	}
 };
-
-
 
 #endif /* QUARTZFACTORY_H_ */

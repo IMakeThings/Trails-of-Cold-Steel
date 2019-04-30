@@ -20,14 +20,19 @@ public:
 	EnemyFactory();
 
 	static void loadEnemies();
-	static Enemy* getNewEnemy(std::string ID) {return enemyMap.find(ID)->second();}
-	static std::map<std::string, std::function<Enemy*()>> getEnemyMap() {return enemyMap;}
-	static void regEnemy(std::string ID, std::function<Enemy*()> f) {enemyMap[ID] = f;}
+	static Enemy* getNewEnemy(std::string ID) {
+		return enemyMap.find(ID)->second();
+	}
+	static std::map<std::string, std::function<Enemy*()>> getEnemyMap() {
+		return enemyMap;
+	}
+	static void regEnemy(std::string ID, std::function<Enemy*()> f) {
+		enemyMap[ID] = f;
+	}
 
-	static bool isLoaded() {return loaded;}
+	static bool isLoaded() {
+		return loaded;
+	}
 };
-
-
-
 
 #endif /* ENEMYFACTORY_H_ */

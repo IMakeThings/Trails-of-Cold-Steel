@@ -15,25 +15,54 @@ class Craft {
 	Targetting targetting;
 
 public:
-	Craft(std::string n, int cp, int as, int tar) {name=(n); craftPoints=(cp); AoESize=(as); targetting=(tar); unbalance=(0);}
-	Craft(std::string n, int cp, int as, int tar, int u) {name = n; craftPoints = cp; AoESize = as; targetting=tar; unbalance=u;}
+	Craft(std::string n, int cp, int as, int tar) {
+		name = (n);
+		craftPoints = (cp);
+		AoESize = (as);
+		targetting = (tar);
+		unbalance = (0);
+	}
+	Craft(std::string n, int cp, int as, int tar, int u) {
+		name = n;
+		craftPoints = cp;
+		AoESize = as;
+		targetting = tar;
+		unbalance = u;
+	}
 
-	virtual ~Craft() {}
+	virtual ~Craft() {
+	}
 
-	std::string getName() {return name;}
-	int getCraftPoints() {return craftPoints;}
-	int getAoESize() {return AoESize;}
-	int getUnbalance() {return unbalance;}
-	Targetting getTargetting() {return targetting;}
+	std::string getName() {
+		return name;
+	}
+	int getCraftPoints() {
+		return craftPoints;
+	}
+	int getAoESize() {
+		return AoESize;
+	}
+	int getUnbalance() {
+		return unbalance;
+	}
+	Targetting getTargetting() {
+		return targetting;
+	}
 
-	virtual void displayHitDescription(Entity* hitter, Entity* hittee, int dmg) = 0;
-	virtual bool displayAfterHitDescription(Entity* hitter) {return false;}
+	virtual void displayHitDescription(Entity* hitter, Entity* hittee,
+			int dmg) = 0;
+	virtual bool displayAfterHitDescription(Entity* hitter) {
+		return false;
+	}
 	virtual void displaySpecificCraftDescription() = 0;
 	void displayCraftDescription();
 
-
-	virtual void craftAimedFunctions(Entity* user, Position aimed) {};
-	virtual void craftOnHitFunctions(Entity* entity) {};
+	virtual void craftAimedFunctions(Entity* user, Position aimed) {
+	}
+	;
+	virtual void craftOnHitFunctions(Entity* entity) {
+	}
+	;
 
 	virtual int getBaseDamage() = 0;
 };

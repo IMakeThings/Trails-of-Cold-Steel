@@ -16,10 +16,6 @@ EnemyFactory::EnemyFactory() {
 
 void EnemyFactory::loadEnemies() {
 	loaded = true;
-	enemyMap["001E"] = []() -> Enemy* {return new FlyingFeline({0,0});};
+	enemyMap["001E"] = []() -> Enemy* {return new FlyingFeline( {0,0});};
 }
-
-
-
-
 

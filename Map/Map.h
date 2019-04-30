@@ -29,7 +29,7 @@ public:
 	static void display();
 	static void displayAoE(Craft* usedCraft, Position pos);
 	static void displayAoE(std::vector<Position> positions);
-	static void displayAoE(Position pos) {map[pos[0]][pos[1]] = "X"; 	display(); update();}
+	static void displayAoE(Position pos) {map[pos[0]][pos[1]] = "X"; display(); update();}
 
 //	static void addEntity(Entity* charac) {Entitys.push_back(charac);}
 //	static void addEntity(std::vector<Entity*> charac) {Entitys = charac;}
@@ -38,7 +38,5 @@ public:
 
 	static void update();
 };
-
-
 
 #endif /* MAP_H_ */

@@ -10,26 +10,30 @@
 
 #include "Crafts.h"
 
-class DoubleKittyKick:public Craft {
+class DoubleKittyKick: public Craft {
 	static const std::string name;
 	static const int craftPoints;
 	static const int AoESize;
 	static const Targetting targetting;
 
 public:
-	DoubleKittyKick():Craft(name, craftPoints, AoESize, targetting) {}
+	DoubleKittyKick() :
+			Craft(name, craftPoints, AoESize, targetting) {
+	}
 
 	void displayHitDescription(Entity* hitter, Entity* hittee, int dmg);
 	void displaySpecificCraftDescription();
-	bool displayAfterHitDescription(Entity* hitter) {return false;}
+	bool displayAfterHitDescription(Entity* hitter) {
+		return false;
+	}
 
-	void craftAimedFunctions(Entity* user, Position aimed) {}
+	void craftAimedFunctions(Entity* user, Position aimed) {
+	}
 
-	~DoubleKittyKick() {}
+	~DoubleKittyKick() {
+	}
 
 	int getBaseDamage();
 };
-
-
 
 #endif /* DOUBLEKITTYKICK_H_ */

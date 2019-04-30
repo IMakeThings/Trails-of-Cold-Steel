@@ -10,7 +10,7 @@
 
 #include "Crafts.h"
 
-class AutumnLeafCutter:public Craft {
+class AutumnLeafCutter: public Craft {
 	static const std::string name;
 	static const int craftPoints;
 	static const int AoESize;
@@ -18,9 +18,12 @@ class AutumnLeafCutter:public Craft {
 	static const Targetting targetting;
 
 public:
-	AutumnLeafCutter():Craft(name, craftPoints, AoESize, targetting, unbalance) {}
+	AutumnLeafCutter() :
+			Craft(name, craftPoints, AoESize, targetting, unbalance) {
+	}
 
-	~AutumnLeafCutter() {}
+	~AutumnLeafCutter() {
+	}
 
 	void displayHitDescription(Entity* hitter, Entity* hittee, int dmg);
 	bool displayAfterHitDescription(Entity* hitter);
@@ -32,9 +35,9 @@ public:
 
 	int getBaseDamage();
 
-	int getAoESize() {return AoESize;}
+	int getAoESize() {
+		return AoESize;
+	}
 };
-
-
 
 #endif /* AUTUMNLEAFCUTTER_H_ */

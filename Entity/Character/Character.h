@@ -9,20 +9,42 @@
 #include "BasicAttack.h"
 #include "Equipment.h"
 #include "Quartz.h"
+#include "PlayerAI.h"
 
 using Stats = std::array<int, 11>;
 using AttackRanks = std::array<int, 4>;
 
 extern void Console();
 
-class Character:public Entity {
+class Character: public Entity {
 	AttackRanks ranks;
 
 	Entity* link;
 
+	PlayerAI* AI;
+
+	int counter = 0;
 public:
-	Character(Stats const& s, const std::string & n, Position p, AttackRanks ar, std::string r):Entity(s, n, p, r) {Entity::addCharacter(this); ranks = ar; link = this; setBasicAttack(new BasicAttack());}
-	~Character() {}
+	Character(Stats const& s, const std::string & n, Position p, AttackRanks ar,
+			std::string r) :
+			Entity(s, n, p, r) {
+		Entity::addCharacter(this);
+		ranks = ar;
+		link = this;
+		setBasicAttack(new BasicAttack());
+	}
+	Character(Stats const& s, const std::string & n, Position p, AttackRanks ar,
+			std::string r, PlayerAI* ai) :
+			Entity(s, n, p, r) {
+		Entity::addCharacter(this);
+		ranks = ar;
+		link = this;
+		setBasicAttack(new BasicAttack());
+		AI = ai;
+	}
+
+	~Character() {
+	}
 
 	void useCraft(Craft* usedCraft, Entity* enemy, bool followUpAttack = false);
 	void useCraft(Craft* usedCraft);
@@ -49,11 +71,14 @@ public:
 
 	int getArtDamage(Art* art);
 
-	void setLink(Entity* charac) {link = charac;}
-	Entity* getLink() {return link;}
+	void setLink(Entity* charac) {
+		link = charac;
+	}
+	Entity* getLink() {
+		return link;
+	}
 
 	void moveAttack(Craft* usedCraft, Position pos);
-
 
 	bool isUnbalanced(Entity* enemy, Craft* usedCraft);
 };

@@ -10,20 +10,23 @@
 
 #include "Entity.h"
 #include "Map.h"
+#include "PlayerAI.h"
 
 class Game {
 	std::vector<Entity*> turnOrder;
 
+	int counter = 0;
+
+	PlayerAI* p;
+
 public:
 	Game();
+	Game(PlayerAI* p);
 	virtual ~Game();
 
 	void gameLoop();
 
-
 	void showMap();
-
-
 
 	//Combat stuff
 	Entity* nextEntityTurn();

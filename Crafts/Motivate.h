@@ -10,7 +10,7 @@
 
 #include "Crafts.h"
 
-class Motivate:public Craft {
+class Motivate: public Craft {
 	static const std::string name;
 	static const int craftPoints;
 	static const int AoESize;
@@ -18,23 +18,29 @@ class Motivate:public Craft {
 	static const Targetting targetting;
 
 public:
-	Motivate():Craft(name, craftPoints, AoESize, targetting, unbalance) {}
+	Motivate() :
+			Craft(name, craftPoints, AoESize, targetting, unbalance) {
+	}
 
-	~Motivate() {}
+	~Motivate() {
+	}
 
 	void displayHitDescription(Entity* hitter, Entity* hittee, int dmg);
 	void displaySpecificCraftDescription();
 
-
 	void craftOnHitFunctions(Entity* entity);
 
-	void giveCP(Entity* character) {character->setCP(character->getCP() + 10);}
+	void giveCP(Entity* character) {
+		character->setCP(character->getCP() + 10);
+	}
+
+	void STRbuff(Entity* character);
 
 	int getBaseDamage();
 
-	int getAoESize() {return AoESize;}
+	int getAoESize() {
+		return AoESize;
+	}
 };
-
-
 
 #endif /* MOTIVATE_H_ */

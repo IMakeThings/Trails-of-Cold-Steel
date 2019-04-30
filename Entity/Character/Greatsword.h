@@ -9,7 +9,7 @@
 #ifndef GREATSWORD_H_
 #define GREATSWORD_H_
 
-class Greatsword:public Character {
+class Greatsword: public Character {
 	static const Stats baseStats;
 	static const AttackRanks ranks;
 	static const std::string representation;
@@ -21,7 +21,5 @@ public:
 	int getAttackModifier();
 	int getArtModifier();
 };
-
-
 
 #endif /* GREATSWORD_H_ */

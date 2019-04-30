@@ -10,7 +10,6 @@
 std::map<std::string, std::function<Equipment*()>> EquipmentFactory::equipmentMap;
 bool EquipmentFactory::loaded = false;
 
-
 EquipmentFactory::EquipmentFactory() {
 	return;
 }
@@ -21,8 +20,4 @@ void EquipmentFactory::loadEquipments() {
 	equipmentMap["001S"] = []() -> Equipment* {return new LeatherShoes();};
 	equipmentMap["001W"] = []() -> Equipment* {return new Kazekiri();};
 }
-
-
-
-
 
